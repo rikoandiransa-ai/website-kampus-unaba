@@ -1,0 +1,6 @@
+{
+  "name": "Campus Activity System",
+  "description": "A web-based campus activity, student database, and attendance management system with reporting and analytics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

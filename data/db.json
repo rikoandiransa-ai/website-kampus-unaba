@@ -1,0 +1,272 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "Admin",
+      "role": "admin"
+    }
+  ],
+  "students": [
+    {
+      "id": "250222003",
+      "name": "Riko",
+      "studyProgram": "Informatics Engineering",
+      "faculty": "Computer Science",
+      "email": "riko@unaba.ac.id",
+      "username": "riko",
+      "password": "$2b$10$x2hImv.7/PM0M0bpWLf1IeVim1NIoksV5io0DLJLMmxr8BzrIscam"
+    },
+    {
+      "id": "250222006",
+      "name": "Alfia Shilka Firhandani",
+      "studyProgram": "Information Systems",
+      "faculty": "Computer Science",
+      "email": "alfia@unaba.ac.id",
+      "username": "alfia",
+      "password": "$2b$10$E3tZSHi6xCRWVGRIq4FvI.2IqACfVPj2IerRPKkQOIKGYFMYhlku."
+    },
+    {
+      "id": "250222004",
+      "name": "Deni Davitra",
+      "studyProgram": "Digital Business",
+      "faculty": "Economics & Business",
+      "email": "deni@unaba.ac.id",
+      "username": "deni",
+      "password": "$2b$10$zomRyP/mwfielYCmDwJKWOxTTMFz3F5/JagosnxqXJxZGb4Orj1iO"
+    },
+    {
+      "id": "250222001",
+      "name": "Nayla Syifa Ramadhani",
+      "studyProgram": "Management",
+      "faculty": "Economics & Business",
+      "email": "nayla@unaba.ac.id",
+      "username": "nayla",
+      "password": "$2b$10$eXinfO3hK8iGmG/5wqZ1.OW.tp2OdgYn.gIvmNZuVXran/oP6bD.O"
+    },
+    {
+      "id": "250222007",
+      "name": "Apriliani Meka",
+      "studyProgram": "Visual Communication Design",
+      "faculty": "Creative Industry",
+      "email": "apriliani@unaba.ac.id",
+      "username": "apriliani",
+      "password": "$2b$10$9CnI9X98UVEfc/PA7cRNPuXzG3oa7c4v2HA.3889C9bIlNvjfprIu"
+    },
+    {
+      "id": "250222005",
+      "name": "Andora Lavincy",
+      "studyProgram": "Informatics Engineering",
+      "faculty": "Computer Science",
+      "email": "andora@unaba.ac.id",
+      "username": "andora",
+      "password": "$2b$10$x2hImv.7/PM0M0bpWLf1IeVim1NIoksV5io0DLJLMmxr8BzrIscam"
+    },
+    {
+      "id": "250222002",
+      "name": "Galang Saputra",
+      "studyProgram": "Information Systems",
+      "faculty": "Computer Science",
+      "email": "galang@unaba.ac.id",
+      "username": "galang",
+      "password": "$2b$10$x2hImv.7/PM0M0bpWLf1IeVim1NIoksV5io0DLJLMmxr8BzrIscam"
+    }
+  ],
+  "activities": [
+    {
+      "id": "ACT001",
+      "activityName": "Campus Hackathon 2026",
+      "description": "A 24-hour programming and design competition to solve real-world problems.",
+      "date": "2026-07-15",
+      "time": "09:00",
+      "location": "Auditorium Main Campus",
+      "organizer": "Tech Student Association",
+      "status": "Active"
+    },
+    {
+      "id": "ACT002",
+      "activityName": "Entrepreneurship Seminar",
+      "description": "Seminar featuring modern digital startups and business builders in Indonesia.",
+      "date": "2026-07-20",
+      "time": "13:00",
+      "location": "Seminar Hall B, 3rd Floor",
+      "organizer": "BEM Universitas Anak Bangsa",
+      "status": "Active"
+    },
+    {
+      "id": "ACT003",
+      "activityName": "English Debate Championship",
+      "description": "Annual inter-faculty english debate competition covering current global trends.",
+      "date": "2026-07-10",
+      "time": "08:00",
+      "location": "Classroom C.402",
+      "organizer": "English Club UNABA",
+      "status": "Active"
+    },
+    {
+      "id": "ACT004",
+      "activityName": "Campus Blood Donation Drive",
+      "description": "Quarterly community service in partnership with Indonesian Red Cross (PMI).",
+      "date": "2026-07-05",
+      "time": "08:30",
+      "location": "Campus Gymnasium",
+      "organizer": "KSR PMI Sub-Unit UNABA",
+      "status": "Completed"
+    },
+    {
+      "id": "ACT005",
+      "activityName": "Web Development Bootcamp",
+      "description": "Intensive weekend hands-on coding course focusing on React & Tailwind CSS.",
+      "date": "2026-07-01",
+      "time": "10:00",
+      "location": "Lab Computer 2",
+      "organizer": "Informatics Lab",
+      "status": "Completed"
+    }
+  ],
+  "absences": [
+    {
+      "id": "ABS001",
+      "studentId": "250222003",
+      "activityId": "ACT001",
+      "date": "2026-07-15",
+      "time": "09:15",
+      "status": "Present"
+    },
+    {
+      "id": "ABS002",
+      "studentId": "250222006",
+      "activityId": "ACT001",
+      "date": "2026-07-15",
+      "time": "09:10",
+      "status": "Present"
+    },
+    {
+      "id": "ABS003",
+      "studentId": "250222004",
+      "activityId": "ACT001",
+      "date": "2026-07-15",
+      "time": "09:30",
+      "status": "Present"
+    },
+    {
+      "id": "ABS004",
+      "studentId": "250222001",
+      "activityId": "ACT001",
+      "date": "2026-07-15",
+      "time": "10:00",
+      "status": "Absent"
+    },
+    {
+      "id": "ABS005",
+      "studentId": "250222007",
+      "activityId": "ACT001",
+      "date": "2026-07-15",
+      "time": "09:05",
+      "status": "Present"
+    },
+    {
+      "id": "ABS006",
+      "studentId": "250222003",
+      "activityId": "ACT002",
+      "date": "2026-07-20",
+      "time": "13:05",
+      "status": "Present"
+    },
+    {
+      "id": "ABS007",
+      "studentId": "250222006",
+      "activityId": "ACT002",
+      "date": "2026-07-20",
+      "time": "13:10",
+      "status": "Present"
+    },
+    {
+      "id": "ABS008",
+      "studentId": "250222004",
+      "activityId": "ACT002",
+      "date": "2026-07-20",
+      "time": "13:40",
+      "status": "Sick"
+    },
+    {
+      "id": "ABS009",
+      "studentId": "250222001",
+      "activityId": "ACT002",
+      "date": "2026-07-20",
+      "time": "13:00",
+      "status": "Present"
+    },
+    {
+      "id": "ABS010",
+      "studentId": "250222003",
+      "activityId": "ACT005",
+      "date": "2026-07-01",
+      "time": "10:02",
+      "status": "Present"
+    },
+    {
+      "id": "ABS011",
+      "studentId": "250222006",
+      "activityId": "ACT005",
+      "date": "2026-07-01",
+      "time": "10:15",
+      "status": "Present"
+    },
+    {
+      "id": "ABS012",
+      "studentId": "250222007",
+      "activityId": "ACT005",
+      "date": "2026-07-01",
+      "time": "10:05",
+      "status": "Present"
+    },
+    {
+      "id": "ABS013",
+      "studentId": "250222004",
+      "activityId": "ACT005",
+      "date": "2026-07-01",
+      "time": "09:55",
+      "status": "Permission"
+    },
+    {
+      "id": "ABS014",
+      "studentId": "250222001",
+      "activityId": "ACT005",
+      "date": "2026-07-01",
+      "time": "10:30",
+      "status": "Absent"
+    },
+    {
+      "id": "ABS015",
+      "studentId": "250222005",
+      "activityId": "ACT001",
+      "date": "2026-07-15",
+      "time": "09:08",
+      "status": "Present"
+    },
+    {
+      "id": "ABS016",
+      "studentId": "250222002",
+      "activityId": "ACT001",
+      "date": "2026-07-15",
+      "time": "09:22",
+      "status": "Present"
+    },
+    {
+      "id": "ABS017",
+      "studentId": "250222005",
+      "activityId": "ACT002",
+      "date": "2026-07-20",
+      "time": "13:00",
+      "status": "Present"
+    },
+    {
+      "id": "ABS018",
+      "studentId": "250222002",
+      "activityId": "ACT002",
+      "date": "2026-07-20",
+      "time": "13:12",
+      "status": "Present"
+    }
+  ]
+}
