@@ -115,25 +115,6 @@ export const Login: React.FC = () => {
               {isLoading ? 'Verifying Session...' : 'Sign In to Portal'}
             </button>
           </form>
-
-          {/* Explicit Credentials Helper Box - cleanly formatted */}
-          <div className="mt-8 pt-6 border-t border-slate-100 bg-slate-50/50 rounded-xl p-4">
-            <h4 className="text-xs font-bold text-slate-600 uppercase tracking-wider mb-2 text-center">
-              System Access Credentials
-            </h4>
-            <div className="grid grid-cols-2 gap-3 text-xs text-slate-500">
-              <div className="bg-white p-2.5 rounded-lg border border-slate-100 text-center">
-                <p className="font-semibold text-slate-700 mb-0.5">Admin Account</p>
-                <p className="font-mono text-blue-600">Admin</p>
-                <p className="font-mono text-slate-600">unaba123</p>
-              </div>
-              <div className="bg-white p-2.5 rounded-lg border border-slate-100 text-center">
-                <p className="font-semibold text-slate-700 mb-0.5">Student Account</p>
-                <p className="font-mono text-blue-600">riko</p>
-                <p className="font-mono text-slate-600">student123</p>
-              </div>
-            </div>
-          </div>
         </div>
       </motion.div>
 

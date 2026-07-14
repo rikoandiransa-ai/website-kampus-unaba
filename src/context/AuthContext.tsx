@@ -33,6 +33,44 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       axios.defaults.headers.common['Authorization'] = `Bearer ${savedToken}`;
     }
     setLoading(false);
+
+    // Dynamic request interceptor to ensure token is always attached
+    const reqInterceptor = axios.interceptors.request.use(
+      (config) => {
+        const token = localStorage.getItem('unaba_token');
+        if (token) {
+          config.headers['Authorization'] = `Bearer ${token}`;
+        }
+        return config;
+      },
+      (error) => Promise.reject(error)
+    );
+
+    // Response interceptor to handle session expiration (401/403) and log out automatically
+    const resInterceptor = axios.interceptors.response.use(
+      (response) => response,
+      (error) => {
+        if (error.response && (error.response.status === 401 || error.response.status === 403)) {
+          console.warn('Session expired or invalid. Logging out...', error.response.status);
+          localStorage.removeItem('unaba_token');
+          localStorage.removeItem('unaba_user');
+          setToken(null);
+          setUser(null);
+          delete axios.defaults.headers.common['Authorization'];
+          
+          // Only redirect if we are not already on the login page
+          if (!window.location.pathname.includes('/login')) {
+            window.location.href = '/login';
+          }
+        }
+        return Promise.reject(error);
+      }
+    );
+
+    return () => {
+      axios.interceptors.request.eject(reqInterceptor);
+      axios.interceptors.response.eject(resInterceptor);
+    };
   }, []);
 
   const login = async (username: string, password: string) => {

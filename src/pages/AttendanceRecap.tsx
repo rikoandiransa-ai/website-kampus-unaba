@@ -156,14 +156,14 @@ export const AttendanceRecap: React.FC = () => {
       {/* Printable Header - hidden on screen, visible on print only */}
       <div className="hidden print:block text-center border-b-2 border-black pb-4 mb-6">
         <h1 className="text-2xl font-black uppercase tracking-wider text-black">UNIVERSITAS ANAK BANGSA</h1>
-        <p className="text-sm font-semibold text-slate-700 tracking-widest mt-1">REKAPITULASI PRESENSI & ABSENSI KEGIATAN MAHASISWA</p>
+        <p className="text-sm font-semibold text-slate-700 tracking-widest mt-1">ABSENTEE ACTIVITIES OF THE UNIVERSITY OF THE NATION RECAP</p>
         <p className="text-xs text-slate-500 font-mono mt-1">Generated: {new Date().toLocaleDateString()} at {new Date().toLocaleTimeString()} UTC</p>
       </div>
 
       {/* Top action header - hidden on print */}
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 bg-white p-6 rounded-2xl border border-slate-100 shadow-sm print:hidden">
         <div>
-          <h2 className="text-xl font-bold text-slate-800">Attendance Summary & Recap</h2>
+          <h2 className="text-xl font-bold text-slate-800">Absentee Activities of the University of the Nation Recap</h2>
           <p className="text-xs text-slate-400">Complete campus activity records, participants ledger, and custom exporting utilities</p>
         </div>
         <div className="flex flex-wrap items-center gap-3">
