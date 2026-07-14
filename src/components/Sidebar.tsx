@@ -46,7 +46,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
       roles: ['admin', 'student'] // Both can submit attendance
     },
     {
-      name: 'Attendance Recap',
+      name: 'Absentee Activities of the University of the Nation Recap',
       path: '/recap',
       icon: FileSpreadsheet,
       roles: ['admin', 'student'] // Both can view recap
