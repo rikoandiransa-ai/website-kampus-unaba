@@ -18,7 +18,7 @@ const DEFAULT_ADMIN_HASH = bcrypt.hashSync('unaba123', 10);
 
 const DEFAULT_DB_DATA: DatabaseSchema = {
   users: [
-    { id: '1', username: 'Admin', role: 'admin' }
+    { id: '1', username: 'unaba', role: 'admin' }
   ],
   students: [
     {
@@ -177,14 +177,14 @@ export function initializeDb() {
       const currentData = JSON.parse(fs.readFileSync(DB_FILE, 'utf-8'));
       let modified = false;
       
-      // Ensure Admin exists in users table with role admin and standard username
+      // Ensure unaba exists in users table with role admin
       if (!currentData.users || !Array.isArray(currentData.users)) {
-        currentData.users = [{ id: '1', username: 'Admin', role: 'admin' }];
+        currentData.users = [{ id: '1', username: 'unaba', role: 'admin' }];
         modified = true;
       } else {
-        const adminIndex = currentData.users.findIndex((u: any) => u.username === 'Admin');
-        if (adminIndex === -1) {
-          currentData.users.push({ id: '1', username: 'Admin', role: 'admin' });
+        const unabaUser = currentData.users.find((u: any) => u.username?.toLowerCase() === 'unaba');
+        if (!unabaUser) {
+          currentData.users.push({ id: '1', username: 'unaba', role: 'admin' });
           modified = true;
         }
       }

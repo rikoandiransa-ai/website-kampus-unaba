@@ -13,7 +13,7 @@ Aplikasi ini menggunakan perpaduan teknologi **React.js** pada sisi frontend, **
    - Mendukung login menggunakan Username/SIM ID dan password dengan pengamanan hashing **bcrypt**.
    - Dilengkapi sistem token JWT (JSON Web Token) yang aman dengan masa kedaluwarsa 24 jam.
    - Akun default administrator:
-     - **Username:** `Admin`
+     - **Username:** `unaba`
      - **Password:** `unaba123`
    - Akun default mahasiswa:
      - **Username:** `riko`

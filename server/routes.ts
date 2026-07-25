@@ -48,17 +48,18 @@ routes.post('/login', (req: Request, res: Response) => {
 
   const db = readDb();
 
-  // 1. Check for Admin Login
-  if (username === 'Admin') {
+  // 1. Check for Admin Login (supports 'unaba' or 'admin' / 'Admin')
+  const normUsername = username.trim().toLowerCase();
+  if (normUsername === 'unaba' || normUsername === 'admin') {
     if (password === 'unaba123') {
       const token = jwt.sign(
-        { id: '1', username: 'Admin', role: 'admin' },
+        { id: '1', username: username.trim(), role: 'admin' },
         JWT_SECRET,
         { expiresIn: '24h' }
       );
       res.json({
         token,
-        user: { id: '1', username: 'Admin', role: 'admin' }
+        user: { id: '1', username: username.trim(), role: 'admin' }
       });
       return;
     } else {

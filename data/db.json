@@ -2,7 +2,7 @@
   "users": [
     {
       "id": "1",
-      "username": "Admin",
+      "username": "unaba",
       "role": "admin"
     }
   ],
@@ -14,7 +14,7 @@
       "faculty": "Computer Science",
       "email": "riko@unaba.ac.id",
       "username": "riko",
-      "password": "$2b$10$x2hImv.7/PM0M0bpWLf1IeVim1NIoksV5io0DLJLMmxr8BzrIscam"
+      "password": "$2b$10$kK4sFaYz7mI73ssY9TBVJO.fxzCSoyuf5jhTVQrwYWVtO4AROwaTC"
     },
     {
       "id": "250222006",
@@ -23,7 +23,7 @@
       "faculty": "Computer Science",
       "email": "alfia@unaba.ac.id",
       "username": "alfia",
-      "password": "$2b$10$E3tZSHi6xCRWVGRIq4FvI.2IqACfVPj2IerRPKkQOIKGYFMYhlku."
+      "password": "$2b$10$kK4sFaYz7mI73ssY9TBVJO.fxzCSoyuf5jhTVQrwYWVtO4AROwaTC"
     },
     {
       "id": "250222004",
@@ -32,7 +32,7 @@
       "faculty": "Economics & Business",
       "email": "deni@unaba.ac.id",
       "username": "deni",
-      "password": "$2b$10$zomRyP/mwfielYCmDwJKWOxTTMFz3F5/JagosnxqXJxZGb4Orj1iO"
+      "password": "$2b$10$kK4sFaYz7mI73ssY9TBVJO.fxzCSoyuf5jhTVQrwYWVtO4AROwaTC"
     },
     {
       "id": "250222001",
@@ -41,7 +41,7 @@
       "faculty": "Economics & Business",
       "email": "nayla@unaba.ac.id",
       "username": "nayla",
-      "password": "$2b$10$eXinfO3hK8iGmG/5wqZ1.OW.tp2OdgYn.gIvmNZuVXran/oP6bD.O"
+      "password": "$2b$10$kK4sFaYz7mI73ssY9TBVJO.fxzCSoyuf5jhTVQrwYWVtO4AROwaTC"
     },
     {
       "id": "250222007",
@@ -50,7 +50,7 @@
       "faculty": "Creative Industry",
       "email": "apriliani@unaba.ac.id",
       "username": "apriliani",
-      "password": "$2b$10$9CnI9X98UVEfc/PA7cRNPuXzG3oa7c4v2HA.3889C9bIlNvjfprIu"
+      "password": "$2b$10$kK4sFaYz7mI73ssY9TBVJO.fxzCSoyuf5jhTVQrwYWVtO4AROwaTC"
     },
     {
       "id": "250222005",
@@ -59,7 +59,7 @@
       "faculty": "Computer Science",
       "email": "andora@unaba.ac.id",
       "username": "andora",
-      "password": "$2b$10$x2hImv.7/PM0M0bpWLf1IeVim1NIoksV5io0DLJLMmxr8BzrIscam"
+      "password": "$2b$10$kK4sFaYz7mI73ssY9TBVJO.fxzCSoyuf5jhTVQrwYWVtO4AROwaTC"
     },
     {
       "id": "250222002",
@@ -68,7 +68,7 @@
       "faculty": "Computer Science",
       "email": "galang@unaba.ac.id",
       "username": "galang",
-      "password": "$2b$10$x2hImv.7/PM0M0bpWLf1IeVim1NIoksV5io0DLJLMmxr8BzrIscam"
+      "password": "$2b$10$kK4sFaYz7mI73ssY9TBVJO.fxzCSoyuf5jhTVQrwYWVtO4AROwaTC"
     }
   ],
   "activities": [

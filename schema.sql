@@ -83,10 +83,10 @@ CREATE TABLE IF NOT EXISTS `absences` (
 -- -------------------------------------------------------
 
 -- 1. Insert User Admin
--- In our Node Express application, password comparisons for "Admin"
+-- In our Node Express application, password comparisons for "unaba"
 -- are intercepted and matched with 'unaba123'
 INSERT INTO `users` (`id`, `username`, `role`) VALUES 
-('1', 'Admin', 'admin')
+('1', 'unaba', 'admin')
 ON DUPLICATE KEY UPDATE `username`=`username`;
 
 -- 2. Insert Students
