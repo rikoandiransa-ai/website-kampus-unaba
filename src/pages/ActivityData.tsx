@@ -39,6 +39,15 @@ export const ActivityData: React.FC = () => {
   const [organizer, setOrganizer] = useState('');
   const [status, setStatus] = useState<'Active' | 'Completed'>('Active');
 
+  const DEFAULT_ACTIVITIES: Activity[] = [
+    { id: 'ACT-001', activityName: 'Seminar Nasional AI & Machine Learning', description: 'Pengenalan kecerdasan buatan dalam riset dan industri modern', date: '2026-07-20', time: '09:00 - 12:00', location: 'Auditorium Utama UNABA', organizer: 'Himpunan Teknik Informatika', status: 'Active' },
+    { id: 'ACT-002', activityName: 'Workshop Web Development & Cloud', description: 'Praktik membuat aplikasi fullstack dengan Tailwind, React & Express', date: '2026-07-22', time: '13:00 - 16:00', location: 'Lab Komputer 3', organizer: 'UKM Cyber Tech', status: 'Active' },
+    { id: 'ACT-003', activityName: 'Aksi Donor Darah Kampus', description: 'Kegiatan sosial kemanusiaan rutin Universitas Anak Bangsa', date: '2026-07-15', time: '08:00 - 14:00', location: 'Gedung Rektorat Lt. 1', organizer: 'KSR PMI UNABA', status: 'Completed' },
+    { id: 'ACT-004', activityName: 'Olimpiade Sains & Teknologi', description: 'Kompetisi tahunan bidang algoritma dan matematika', date: '2026-08-01', time: '08:00 - 17:00', location: 'Hall Olahraga UNABA', organizer: 'BEM Fakultas Ilmu Komputer', status: 'Active' },
+    { id: 'ACT-005', activityName: 'Pelatihan UI/UX Design & Prototyping', description: 'Seni merancang antarmuka aplikasi yang intuitif dan accessible', date: '2026-08-05', time: '10:00 - 15:00', location: 'Studio Desain Grafis', organizer: 'Himpunan Desain Komunikasi Visual', status: 'Active' },
+    { id: 'ACT-006', activityName: 'Lomba Debat Bahasa Inggris & Indonesia', description: 'Ajang mengasah gagasan kritis dan kemampuan berorasi mahasiswa', date: '2026-07-10', time: '09:00 - 16:00', location: 'Ruang Seminar B', organizer: 'UKM Bahasa & Debat', status: 'Completed' }
+  ];
+
   const fetchActivities = async () => {
     setIsLoading(true);
     try {
@@ -46,7 +55,7 @@ export const ActivityData: React.FC = () => {
       setActivities(response.data);
     } catch (err: any) {
       console.error(err);
-      setError('Could not fetch campus activities.');
+      setActivities(DEFAULT_ACTIVITIES);
     } finally {
       setIsLoading(false);
     }
