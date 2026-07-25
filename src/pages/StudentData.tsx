@@ -38,13 +38,13 @@ export const StudentData: React.FC = () => {
   const [password, setPassword] = useState('');
 
   const DEFAULT_STUDENTS: Student[] = [
-    { id: '250222003', name: 'Riko Andiransa', studyProgram: 'Informatics Engineering', faculty: 'Computer Science', email: 'riko@unaba.ac.id', username: 'riko' },
-    { id: '250222006', name: 'Alfia Agustina', studyProgram: 'Information Systems', faculty: 'Computer Science', email: 'alfia@unaba.ac.id', username: 'alfia' },
-    { id: '250222004', name: 'Deni Kurniawan', studyProgram: 'Management', faculty: 'Economics & Business', email: 'deni@unaba.ac.id', username: 'deni' },
-    { id: '250222001', name: 'Nayla Putri', studyProgram: 'Accounting', faculty: 'Economics & Business', email: 'nayla@unaba.ac.id', username: 'nayla' },
-    { id: '250222007', name: 'Apriliani Indah', studyProgram: 'Visual Communication Design', faculty: 'Creative Industry', email: 'apriliani@unaba.ac.id', username: 'apriliani' },
-    { id: '250222005', name: 'Andora Ramadhan', studyProgram: 'Cyber Security', faculty: 'Computer Science', email: 'andora@unaba.ac.id', username: 'andora' },
-    { id: '250222002', name: 'Galang Pratama', studyProgram: 'Software Engineering', faculty: 'Computer Science', email: 'galang@unaba.ac.id', username: 'galang' }
+    { id: '250222003', name: 'Riko', studyProgram: 'Informatics Engineering', faculty: 'Computer Science', email: 'riko@unaba.ac.id', username: 'riko' },
+    { id: '250222006', name: 'Alfia Shilka Firhandani', studyProgram: 'Information Systems', faculty: 'Computer Science', email: 'alfia@unaba.ac.id', username: 'alfia' },
+    { id: '250222004', name: 'Deni Davitra', studyProgram: 'Digital Business', faculty: 'Economics & Business', email: 'deni@unaba.ac.id', username: 'deni' },
+    { id: '250222001', name: 'Nayla Syifa Ramadhani', studyProgram: 'Management', faculty: 'Economics & Business', email: 'nayla@unaba.ac.id', username: 'nayla' },
+    { id: '250222007', name: 'Apriliani Meka', studyProgram: 'Visual Communication Design', faculty: 'Creative Industry', email: 'apriliani@unaba.ac.id', username: 'apriliani' },
+    { id: '250222005', name: 'Andora Lavincy', studyProgram: 'Informatics Engineering', faculty: 'Computer Science', email: 'andora@unaba.ac.id', username: 'andora' },
+    { id: '250222002', name: 'Galang Saputra', studyProgram: 'Information Systems', faculty: 'Computer Science', email: 'galang@unaba.ac.id', username: 'galang' }
   ];
 
   const fetchStudents = async () => {

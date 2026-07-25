@@ -16,8 +16,13 @@ Aplikasi ini menggunakan perpaduan teknologi **React.js** pada sisi frontend, **
      - **Username:** `unaba`
      - **Password:** `unaba123`
    - Akun default mahasiswa:
-     - **Username:** `riko`
-     - **Password:** `unaba123`
+     - **Riko:** `riko` (Password: `riko`)
+     - **Alfia Shilka Firhandani:** `alfia` (Password: `chika123`)
+     - **Deni Davitra:** `deni` (Password: `deni123`)
+     - **Nayla Syifa Ramadhani:** `nayla` (Password: `nayla123`)
+     - **Apriliani Meka:** `apriliani` (Password: `meka123`)
+     - **Andora Lavincy:** `andora` (Password: `andora123`)
+     - **Galang Saputra:** `galang` (Password: `galang123`)
 
 2. **Student Directory CRUD**
    - Manajemen lengkap (Create, Read, Update, Delete) informasi profil mahasiswa.

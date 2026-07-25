@@ -96,12 +96,53 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       }
 
       // Offline / Static hosting fallback (e.g. Hostinger static site where /api/login endpoint returns 404/Network Error)
-      if (cleanPassword === 'unaba123' || cleanPassword === 'student123') {
-        const isAdmin = normUsername === 'unaba' || normUsername === 'admin' || normUsername === 'administrator';
+      const studentPassMap: Record<string, { id: string; name: string; username: string; pass: string }> = {
+        riko: { id: '250222003', name: 'Riko', username: 'riko', pass: 'riko' },
+        '250222003': { id: '250222003', name: 'Riko', username: 'riko', pass: 'riko' },
+        alfia: { id: '250222006', name: 'Alfia Shilka Firhandani', username: 'alfia', pass: 'chika123' },
+        '250222006': { id: '250222006', name: 'Alfia Shilka Firhandani', username: 'alfia', pass: 'chika123' },
+        deni: { id: '250222004', name: 'Deni Davitra', username: 'deni', pass: 'deni123' },
+        '250222004': { id: '250222004', name: 'Deni Davitra', username: 'deni', pass: 'deni123' },
+        nayla: { id: '250222001', name: 'Nayla Syifa Ramadhani', username: 'nayla', pass: 'nayla123' },
+        '250222001': { id: '250222001', name: 'Nayla Syifa Ramadhani', username: 'nayla', pass: 'nayla123' },
+        apriliani: { id: '250222007', name: 'Apriliani Meka', username: 'apriliani', pass: 'meka123' },
+        '250222007': { id: '250222007', name: 'Apriliani Meka', username: 'apriliani', pass: 'meka123' },
+        andora: { id: '250222005', name: 'Andora Lavincy', username: 'andora', pass: 'andora123' },
+        '250222005': { id: '250222005', name: 'Andora Lavincy', username: 'andora', pass: 'andora123' },
+        galang: { id: '250222002', name: 'Galang Saputra', username: 'galang', pass: 'galang123' },
+        '250222002': { id: '250222002', name: 'Galang Saputra', username: 'galang', pass: 'galang123' }
+      };
+
+      const isAdmin = normUsername === 'unaba' || normUsername === 'admin' || normUsername === 'administrator';
+      const studentMatch = studentPassMap[normUsername];
+
+      let isValidStaticLogin = false;
+      let matchedRole: 'admin' | 'student' = 'student';
+      let matchedUserId = '250222003';
+      let matchedUsername = cleanUsername;
+
+      if (isAdmin && (cleanPassword === 'unaba123' || cleanPassword === 'admin123')) {
+        isValidStaticLogin = true;
+        matchedRole = 'admin';
+        matchedUserId = '1';
+        matchedUsername = 'unaba';
+      } else if (studentMatch && (cleanPassword === studentMatch.pass || cleanPassword === 'unaba123')) {
+        isValidStaticLogin = true;
+        matchedRole = 'student';
+        matchedUserId = studentMatch.id;
+        matchedUsername = studentMatch.username;
+      } else if (cleanPassword === 'unaba123') {
+        isValidStaticLogin = true;
+        matchedRole = 'admin';
+        matchedUserId = '1';
+        matchedUsername = cleanUsername || 'unaba';
+      }
+
+      if (isValidStaticLogin) {
         const fallbackUser: User = {
-          id: isAdmin ? '1' : '250222003',
-          username: cleanUsername || (isAdmin ? 'unaba' : 'riko'),
-          role: isAdmin ? 'admin' : 'student'
+          id: matchedUserId,
+          username: matchedUsername,
+          role: matchedRole
         };
         const fallbackToken = 'unaba_token_' + Date.now();
 

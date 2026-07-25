@@ -28,7 +28,7 @@ const DEFAULT_DB_DATA: DatabaseSchema = {
       faculty: 'Computer Science',
       email: 'riko@unaba.ac.id',
       username: 'riko',
-      password: bcrypt.hashSync('unaba123', 10)
+      password: bcrypt.hashSync('riko', 10)
     },
     {
       id: '250222006',
@@ -37,7 +37,7 @@ const DEFAULT_DB_DATA: DatabaseSchema = {
       faculty: 'Computer Science',
       email: 'alfia@unaba.ac.id',
       username: 'alfia',
-      password: bcrypt.hashSync('unaba123', 10)
+      password: bcrypt.hashSync('chika123', 10)
     },
     {
       id: '250222004',
@@ -46,7 +46,7 @@ const DEFAULT_DB_DATA: DatabaseSchema = {
       faculty: 'Economics & Business',
       email: 'deni@unaba.ac.id',
       username: 'deni',
-      password: bcrypt.hashSync('unaba123', 10)
+      password: bcrypt.hashSync('deni123', 10)
     },
     {
       id: '250222001',
@@ -55,7 +55,7 @@ const DEFAULT_DB_DATA: DatabaseSchema = {
       faculty: 'Economics & Business',
       email: 'nayla@unaba.ac.id',
       username: 'nayla',
-      password: bcrypt.hashSync('unaba123', 10)
+      password: bcrypt.hashSync('nayla123', 10)
     },
     {
       id: '250222007',
@@ -64,7 +64,7 @@ const DEFAULT_DB_DATA: DatabaseSchema = {
       faculty: 'Creative Industry',
       email: 'apriliani@unaba.ac.id',
       username: 'apriliani',
-      password: bcrypt.hashSync('unaba123', 10)
+      password: bcrypt.hashSync('meka123', 10)
     },
     {
       id: '250222005',
@@ -73,7 +73,7 @@ const DEFAULT_DB_DATA: DatabaseSchema = {
       faculty: 'Computer Science',
       email: 'andora@unaba.ac.id',
       username: 'andora',
-      password: bcrypt.hashSync('unaba123', 10)
+      password: bcrypt.hashSync('andora123', 10)
     },
     {
       id: '250222002',
@@ -82,7 +82,7 @@ const DEFAULT_DB_DATA: DatabaseSchema = {
       faculty: 'Computer Science',
       email: 'galang@unaba.ac.id',
       username: 'galang',
-      password: bcrypt.hashSync('unaba123', 10)
+      password: bcrypt.hashSync('galang123', 10)
     }
   ],
   activities: [
@@ -189,12 +189,39 @@ export function initializeDb() {
         }
       }
 
-      // Automatically migrate any student's password to 'unaba123' if they still use 'student123'
+      // Ensure student names and passwords match expected values
       if (currentData.students && Array.isArray(currentData.students)) {
-        const targetHash = bcrypt.hashSync('unaba123', 10);
+        const passMap: Record<string, string> = {
+          riko: 'riko',
+          alfia: 'chika123',
+          deni: 'deni123',
+          nayla: 'nayla123',
+          apriliani: 'meka123',
+          andora: 'andora123',
+          galang: 'galang123'
+        };
+
+        const nameMap: Record<string, string> = {
+          riko: 'Riko',
+          alfia: 'Alfia Shilka Firhandani',
+          deni: 'Deni Davitra',
+          nayla: 'Nayla Syifa Ramadhani',
+          apriliani: 'Apriliani Meka',
+          andora: 'Andora Lavincy',
+          galang: 'Galang Saputra'
+        };
+
         currentData.students.forEach((student: any) => {
-          if (student.password && !bcrypt.compareSync('unaba123', student.password)) {
-            student.password = targetHash;
+          const u = student.username?.toLowerCase();
+          if (u && passMap[u]) {
+            const expectedPass = passMap[u];
+            if (!student.password || !bcrypt.compareSync(expectedPass, student.password)) {
+              student.password = bcrypt.hashSync(expectedPass, 10);
+              modified = true;
+            }
+          }
+          if (u && nameMap[u] && student.name !== nameMap[u]) {
+            student.name = nameMap[u];
             modified = true;
           }
         });
