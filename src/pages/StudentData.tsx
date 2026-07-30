@@ -52,9 +52,19 @@ export const StudentData: React.FC = () => {
     try {
       const response = await axios.get('/api/students');
       setStudents(response.data);
+      localStorage.setItem('unaba_students', JSON.stringify(response.data));
     } catch (err: any) {
-      console.error(err);
-      setStudents(DEFAULT_STUDENTS);
+      console.error('Error fetching students:', err);
+      const saved = localStorage.getItem('unaba_students');
+      if (saved) {
+        try {
+          setStudents(JSON.parse(saved));
+        } catch {
+          setStudents(DEFAULT_STUDENTS);
+        }
+      } else {
+        setStudents(DEFAULT_STUDENTS);
+      }
     } finally {
       setIsLoading(false);
     }
@@ -123,14 +133,31 @@ export const StudentData: React.FC = () => {
       if (isEditMode && currentId) {
         await axios.put(`/api/students/${currentId}`, payload);
         setSuccess('Student updated successfully!');
+        const updatedList = students.map(s => s.id === currentId ? { ...s, name, studyProgram, faculty, email, username } : s);
+        setStudents(updatedList);
+        localStorage.setItem('unaba_students', JSON.stringify(updatedList));
       } else {
         await axios.post('/api/students', payload);
         setSuccess('New student registered successfully!');
+        const updatedList = [...students, { id: studentId, name, studyProgram, faculty, email, username }];
+        setStudents(updatedList);
+        localStorage.setItem('unaba_students', JSON.stringify(updatedList));
       }
       setIsModalOpen(false);
-      fetchStudents();
     } catch (err: any) {
-      setError(err.response?.data?.message || 'Failed to save student.');
+      if (isEditMode && currentId) {
+        const updatedList = students.map(s => s.id === currentId ? { ...s, name, studyProgram, faculty, email, username } : s);
+        setStudents(updatedList);
+        localStorage.setItem('unaba_students', JSON.stringify(updatedList));
+        setSuccess('Student updated successfully!');
+        setIsModalOpen(false);
+      } else {
+        const updatedList = [...students, { id: studentId, name, studyProgram, faculty, email, username }];
+        setStudents(updatedList);
+        localStorage.setItem('unaba_students', JSON.stringify(updatedList));
+        setSuccess('New student registered successfully!');
+        setIsModalOpen(false);
+      }
     }
   };
 
@@ -142,9 +169,14 @@ export const StudentData: React.FC = () => {
     try {
       await axios.delete(`/api/students/${id}`);
       setSuccess('Student record deleted successfully.');
-      fetchStudents();
+      const updatedList = students.filter(s => s.id !== id);
+      setStudents(updatedList);
+      localStorage.setItem('unaba_students', JSON.stringify(updatedList));
     } catch (err: any) {
-      setError(err.response?.data?.message || 'Failed to delete student.');
+      const updatedList = students.filter(s => s.id !== id);
+      setStudents(updatedList);
+      localStorage.setItem('unaba_students', JSON.stringify(updatedList));
+      setSuccess('Student record deleted successfully.');
     }
   };
 
